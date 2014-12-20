@@ -10,7 +10,7 @@
 <link href="css/common.css" rel="stylesheet">
 </head>
 
-<body class="page_seach page_seach_lsit">
+<body class="page_seach">
 
 	<!--header-->
 	<div class="header">
@@ -67,7 +67,7 @@
                         <a href="javascript:;" onclick="showJob(this)" data-jobname="all">全部</a><em></em>
 						<a href="javascript:;" onclick="showJob(this)" data-jobname="ch">策划类</a><em></em>
 						<a href="javascript:;" onclick="showJob(this)" data-jobname="js">技术类</a><em></em>
-						<a href="javascript:;" onclick="showJob(this)" data-jobname="ms">美术类</a><em></em>
+						<a href="javascript:;" onclick="showJob(this)" data-jobname="sc">市场类</a><em></em>
 						<a href="javascript:;" onclick="showJob(this)" data-jobname="yw">运维类</a><em></em>
 						<a href="javascript:;" onclick="showJob(this)" data-jobname="kf">客服类</a>
                    </div>
@@ -81,21 +81,33 @@
                     </div>
                     <img src="img/seach/hot_job.png"></img>
                     <ul class="hotjob_ul">
-                    	<li class="hotjob_li"><a href=""><span class="hotjob_name">SEO专员</span><span class="hotjob_time">05/20</span></a></li>
-                        <li class="hotjob_li"><a href=""><span class="hotjob_name">UI设计师</span><span class="hotjob_time">05/20</span></a></li>
-                        <li class="hotjob_li"><a href=""><span class="hotjob_name">PHP工程师</span><span class="hotjob_time">05/20</span></a></li>
-                        <li class="hotjob_li"><a href=""><span class="hotjob_name">WEB工程师</span><span class="hotjob_time">05/20</span></a></li>
-                        <li class="hotjob_li"><a href=""><span class="hotjob_name">渗透测试工程师</span><span class="hotjob_time">05/20</span></a></li>
-                        <li class="hotjob_li"><a href=""><span class="hotjob_name">竞价专员</span><span class="hotjob_time">05/20</span></a></li>
+                    	<li class="hotjob_li"><a href="job_article/job_article_seo.html"><span class="hotjob_name">SEO专员</span><span class="hotjob_time">05/20</span></a></li>
+                        <li class="hotjob_li"><a href="job_article/job_article_ui.html"><span class="hotjob_name">UI设计师</span><span class="hotjob_time">05/20</span></a></li>
+                        <li class="hotjob_li"><a href="job_article/job_article_php.html"><span class="hotjob_name">PHP工程师</span><span class="hotjob_time">05/20</span></a></li>
+                        <li class="hotjob_li"><a href="job_article/job_article_webui.html"><span class="hotjob_name">WEB工程师</span><span class="hotjob_time">05/20</span></a></li>
+                        <li class="hotjob_li"><a href="job_article/job_article_hack.html"><span class="hotjob_name">渗透测试工程师</span><span class="hotjob_time">05/20</span></a></li>
+                        <li class="hotjob_li"><a href="job_article/job_article_jinjia.html"><span class="hotjob_name">竞价主管</span><span class="hotjob_time">05/20</span></a></li>
                     </ul>
                 </div>
 
-				<div class="seach_job" style="display: none;">
+				<div class="job_lsit" style="display: none;">
                     <div class="title"><img src="img/seach/seach_list.png"/></div>
-                   	<ul class="joblist_ui">
-                    	<li class="joblist_li"><a href=""><span class="joblist_name">SEO专员</span><span class="joblist_class">PHP工程师</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
-                        <li class="joblist_li"><a href=""><span class="joblist_name">SEO专员</span><span class="joblist_class">PHP工程师</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
-                        <li class="joblist_li"><a href=""><span class="joblist_name">SEO专员</span><span class="joblist_class">PHP工程师</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+                   	<ul class="joblist_ui joblist_ui_ch" style="display: none;">
+                    	<li class="joblist_li"><a href="job_article/job_article_php.html"><span class="joblist_name">PHP工程师</span><span class="joblist_class">技术类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+						<li class="joblist_li"><a href="job_article/job_article_webui.html"><span class="joblist_name">WEB前端</span><span class="joblist_class">技术类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+                    </ul>
+                    <ul class="joblist_ui joblist_ui_js" style="display: none;">
+                    	<li class="joblist_li"><a href="job_article/job_article_ui.html"><span class="joblist_name">UI设计师</span><span class="joblist_class">策划类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+                    </ul>
+                    <ul class="joblist_ui joblist_ui_sc" style="display: none;">
+                    	
+                    </ul>
+                    <ul class="joblist_ui joblist_ui_yw" style="display: none;">
+                    	<li class="joblist_li"><a href="job_article/job_article_hack.html"><span class="joblist_name">渗透测试</span><span class="joblist_class">市场类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+						<li class="joblist_li"><a href="job_article/job_article_seo.html"><span class="joblist_name">SEO专员</span><span class="joblist_class">市场类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+                    </ul>
+                    <ul class="joblist_ui joblist_ui_kf" style="display: none;">
+                    	
                     </ul>
                 </div>
                 
@@ -105,12 +117,12 @@
         	 <div class="show_title"><span class="title_name">热招职位</span><span class="more_job">更多</span></div>
              <div class="job_list">
              	<ul class="job_list_ul">
-                	<li class="job_list_li"><a href=""><span class="job_list_time">05/20</span><span class="job_list_name">SEO专员</span></a></li>
-                    <li class="job_list_li"><a href=""><span class="job_list_time">05/20</span><span class="job_list_name">PHP工程师</span></a></li>
-                    <li class="job_list_li"><a href=""><span class="job_list_time">05/20</span><span class="job_list_name">渗透测试工程师</span></a></li>
-                    <li class="job_list_li"><a href=""><span class="job_list_time">05/20</span><span class="job_list_name">WEB工程师</span></a></li>
-                    <li class="job_list_li"><a href=""><span class="job_list_time">05/20</span><span class="job_list_name">竞价专员</span></a></li>
-                    <li class="job_list_li"><a href=""><span class="job_list_time">05/20</span><span class="job_list_name">UI设计师</span></a></li>
+                	<li class="job_list_li"><a href="job_article/job_article_seo.html"><span class="job_list_time">05/20</span><span class="job_list_name">SEO专员</span></a></li>
+                    <li class="job_list_li"><a href="job_article/job_article_php.html"><span class="job_list_time">05/20</span><span class="job_list_name">PHP工程师</span></a></li>
+                    <li class="job_list_li"><a href="job_article/job_article_hack.html"><span class="job_list_time">05/20</span><span class="job_list_name">渗透测试工程师</span></a></li>
+                    <li class="job_list_li"><a href="job_article/job_article_webui.html"><span class="job_list_time">05/20</span><span class="job_list_name">WEB工程师</span></a></li>
+                    <li class="job_list_li"><a href="job_article/job_article_jinjia.html"><span class="job_list_time">05/20</span><span class="job_list_name">竞价专员</span></a></li>
+                    <li class="job_list_li"><a href="job_article/job_article_ui.html"><span class="job_list_time">05/20</span><span class="job_list_name">UI设计师</span></a></li>
                 </ul>
              </div>
         </div>
@@ -179,7 +191,14 @@ $(".nav_li .menu_a").hover(function(){
  **/
 function showJob(obj){
 	var job_name=$(obj).attr("data-jobname");
-	alert(job_name);
+	$(".content_left .hot_job").hide();
+	$(".content_left .job_lsit").css({"display":"block"});
+	if(job_name=='all'){
+		$(".joblist_ui").css({"display":"block"});
+	}else{
+		$(".joblist_ui").css({"display":"none"});
+		$(".joblist_ui_"+job_name).css({"display":"block"});
+	}
 }
 
 

@@ -215,14 +215,14 @@ html { overflow-y: scroll;}
 
 
 /*职位搜索列表*/
-.page_seach_lsit .content_left .seach_job{}
-.page_seach_lsit .content_left .seach_job .title{padding-left: 20px;}
-.page_seach_lsit .content_left .seach_job .joblist_ui{}
-.page_seach_lsit .content_left .seach_job .joblist_li{padding: 0px 15px;height: 40px;line-height: 40px;font-size: 16px;text-align: center;}
-.page_seach_lsit .content_left .seach_job .joblist_name{width: 250px;float: left;color: #686868;font-size: 14px;}
-.page_seach_lsit .content_left .seach_job .joblist_class{width: 120px;float: left;color: #686868;font-size: 14px;}
-.page_seach_lsit .content_left .seach_job .joblist_num{width: 110px;float: left;color: #686868;font-size: 14px;}
-.page_seach_lsit .content_left .seach_job .joblist_time{width: 118px;float: left;color: #686868;font-size: 14px;}
+.content_left .job_lsit{}
+.content_left .job_lsit .title{padding-left: 20px;}
+.content_left .job_lsit .joblist_ui{}
+.content_left .job_lsit .joblist_li{padding: 0px 15px;height: 40px;line-height: 40px;font-size: 16px;text-align: center;}
+.content_left .job_lsit .joblist_name{width: 250px;float: left;color: #686868;font-size: 14px;}
+.content_left .job_lsit .joblist_class{width: 120px;float: left;color: #686868;font-size: 14px;}
+.content_left .job_lsit .joblist_num{width: 110px;float: left;color: #686868;font-size: 14px;}
+.content_left .job_lsit .joblist_time{width: 118px;float: left;color: #686868;font-size: 14px;}
 
 /*职位详情*/
 .page_seach .content {height:1000px;}
