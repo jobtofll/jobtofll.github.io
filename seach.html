@@ -241,8 +241,8 @@ function getQueryString(name) {
 }
 
 //截获页面参数
-var q_job_class=decodeURI(getQueryString("j_class"));
-var q_job_name=decodeURI(getQueryString("j_name"));
+var q_job_class=getQueryString("j_class");
+var q_job_name=getQueryString("j_name");
 if(q_job_class!=""&&q_job_class!=null){
 	$(".show_select").attr("data-jobname",q_job_class);//设置值
 	showJob(document.getElementById('show_select'),q_job_name);

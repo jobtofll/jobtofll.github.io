@@ -241,8 +241,8 @@ $(".select_ul .select_option").click(function(){
 
 
 $(".job_sch_btn").click(function(){
-	var job_class=encodeURI($(".show_select").attr("data-jobname"));
-	var job_name=encodeURI($(".job_sch_intext").val());
+	var job_class=escape($(".show_select").attr("data-jobname"));
+	var job_name=escape($(".job_sch_intext").val());
 	window.open("seach.html?j_class="+job_class+"&j_name="+job_name);
 });
 
