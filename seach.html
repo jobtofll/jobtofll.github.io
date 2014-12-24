@@ -50,11 +50,13 @@
             	</div>
                 <div class="job_sch_form">
                     <div class="moni_select">
-                        <div class="show_select index_ico">-全部职位-<em>▼</em></div>
+                        <div class="show_select index_ico" id="show_select" data-jobname='all'>-全部职位-<em>▼</em></div>
                             <ul class="select_ul">
-                                <li class="select_option">策划类</li>
-                                <li class="select_option">技术类</li>
-                                <li class="select_option">美术类</li>
+                                <li class="select_option" data-jobname="ch">策划类</li>
+                                <li class="select_option" data-jobname="js">技术类</li>
+                                <li class="select_option" data-jobname="sc">市场类</li>
+                                <li class="select_option" data-jobname="yw">运维类</li>
+                                <li class="select_option" data-jobname="kf">客服类</li>
                             </ul>
                         </div>
                         <input type="text" class="job_sch_intext index_ico"></input>
@@ -92,19 +94,19 @@
 
 				<div class="job_lsit" style="display: none;">
                     <div class="title"><img src="img/seach/seach_list.png"/></div>
-                   	<ul class="joblist_ui joblist_ui_ch" style="display: none;">
+                   	<ul class="joblist_ui joblist_ch" style="display: none;">
+                    	<li class="joblist_li"><a href="job_article/job_article_ui.html"><span class="joblist_name">UI设计师</span><span class="joblist_class">策划类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+                    </ul>
+                    <ul class="joblist_ui joblist_js" style="display: none;">
                     	<li class="joblist_li"><a href="job_article/job_article_php.html"><span class="joblist_name">PHP工程师</span><span class="joblist_class">技术类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
 						<li class="joblist_li"><a href="job_article/job_article_webui.html"><span class="joblist_name">WEB前端</span><span class="joblist_class">技术类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
                     </ul>
-                    <ul class="joblist_ui joblist_ui_js" style="display: none;">
-                    	<li class="joblist_li"><a href="job_article/job_article_ui.html"><span class="joblist_name">UI设计师</span><span class="joblist_class">策划类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
-                    </ul>
                     <ul class="joblist_ui joblist_ui_sc" style="display: none;">
-                    	
-                    </ul>
-                    <ul class="joblist_ui joblist_ui_yw" style="display: none;">
                     	<li class="joblist_li"><a href="job_article/job_article_hack.html"><span class="joblist_name">渗透测试</span><span class="joblist_class">市场类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
 						<li class="joblist_li"><a href="job_article/job_article_seo.html"><span class="joblist_name">SEO专员</span><span class="joblist_class">市场类</span><span class="joblist_num">10</span><span class="joblist_time">05/20</span></a></li>
+                    </ul>
+                    <ul class="joblist_ui joblist_ui_yw" style="display: none;">
+                    	
                     </ul>
                     <ul class="joblist_ui joblist_ui_kf" style="display: none;">
                     	
@@ -161,6 +163,7 @@ $(".moni_select .show_select").toggle(function(){
 	$(".moni_select .select_ul").stop().hide(0);
 });
 $(".select_ul .select_option").click(function(){
+	$(".show_select").attr("data-jobname",$(this).attr('data-jobname'));
 	$(".show_select").html($(this).html()+"<em>▼</em>");
 	$(".moni_select .show_select").click();
 });
@@ -189,8 +192,11 @@ $(".nav_li .menu_a").hover(function(){
  *市场类：	竞价专员，WEB渗透，白帽SEO			代码：sc
  *IT运维类：服务器运维，WEB安全					代码：yw
  **/
-function showJob(obj){
+function showJob(obj,seach_name){
 	var job_name=$(obj).attr("data-jobname");
+	
+	console.log(job_name);
+	
 	$(".content_left .hot_job").hide();
 	$(".content_left .job_lsit").css({"display":"block"});
 	if(job_name=='all'){
@@ -198,9 +204,51 @@ function showJob(obj){
 	}else{
 		$(".joblist_ui").css({"display":"none"});
 		$(".joblist_ui_"+job_name).css({"display":"block"});
+		
+		if(seach_name!=null&&seach_name!=""){
+			//<li class="hotjob_li"><a href="job_article/job_article_seo.html"><span class="hotjob_name">SEO专员</span><span class="hotjob_time">05/20</span></a></li>
+			$.each($(".joblist_ui_"+job_name).children("li"),function(i,val){
+				var hotjob_name=$(this).children("a").children(".joblist_name").html();
+				if(hotjob_name.toLowerCase().indexOf(seach_name.toLowerCase())!=-1){
+					$(this).css("display","block");
+					console.log("true");
+				}else{
+					$(this).css("display","none");
+					console.log(seach_name);
+				}
+				console.log(hotjob_name+"___"+seach_name);
+			});
+		}else{
+			$(".joblist_ui_"+job_name).children("li").css("display","block");
+		}
+		
 	}
+	
 }
 
+/**
+ *搜索按钮点击事件
+ */
+$(".job_sch_btn").click(function(){
+	var seach_job=$(".job_sch_intext").val();				//获取搜索名
+	
+	showJob(document.getElementById('show_select'),seach_job);
+});
+
+//获取网页请求参数，pid，关键字
+function getQueryString(name) {
+ 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+ 	var r = window.location.search.substr(1).match(reg);
+ 	if (r != null) return unescape(r[2]); return null;
+}
+
+//截获页面参数
+var q_job_class=getQueryString("j_class");
+var q_job_name=getQueryString("j_name");
+if(q_job_class!=""&&q_job_class!=null){
+	$(".show_select").attr("data-jobname",q_job_class);//设置值
+	showJob(document.getElementById('show_select'),q_job_name);
+}
 
 </script>
 </body>

@@ -102,18 +102,21 @@
                     <div class="job_sch_box">
                     	<div class="job_sch_form">
                             <div class="moni_select">
-                            	<div class="show_select index_ico">-全部职位-<em>▼</em></div>
+                            	<div class="show_select index_ico" id="show_select" data-jobname='all'>-全部职位-<em>▼</em></div>
                                 <ul class="select_ul">
-                                	<li class="select_option">策划类</li>
-                                    <li class="select_option">技术类</li>
-                                    <li class="select_option">美术类</li>
-                                </ul>
+                                    <li class="select_option" data-jobname="ch">策划类</li>
+                                    <li class="select_option" data-jobname="js">技术类</li>
+                                    <li class="select_option" data-jobname="sc">市场类</li>
+                                    <li class="select_option" data-jobname="yw">运维类</li>
+                                    <li class="select_option" data-jobname="kf">客服类</li>
+                            	</ul>
                             </div>
+                            
                             <input type="text" class="job_sch_intext index_ico"></input>
                             <input type="button" class="job_sch_btn" value="搜索"></input>
                     	</div>
                         <div class="job_sch_class">
-                        	<a href="">全部</a><em></em><a href="">策划类</a><em></em><a href="">技术类</a><em></em><a href="">美术类</a><em></em><a href="">运营类</a><em></em><a href="">职能类</a><em></em><a href="">销售类</a><br/><br/><a href="">客服类</a>
+                         	<a href="seach.html?j_class=all">全部</a><em></em><a href="seach.html?j_class=ch">策划类</a><em></em><a href="seach.html?j_class=js">技术类</a><em></em><a href="seach.html?j_class=sc">市场类</a><em></em><a href="seach.html?j_class=yw">运维类</a><em></em><a href="seach.html?j_class=kf">客服类</a>
                         </div>
                         <em class="bottom_line"></em>
                     </div>
@@ -126,7 +129,7 @@
                         <em class="index_ico job_class"></em>职位分类
                     </div>
                     <div class="job_sch_class">
-                    	<a href="">全部</a><em></em><a href="">策划类</a><em></em><a href="">技术类</a><em></em><a href="">美术类</a><em></em><a href="">运营类</a><em></em><a href="">职能类</a><br/><br/><a href="">销售类</a><em></em><a href="">客服类</a>
+                    	<a href="seach.html?j_class=all">全部</a><em></em><a href="seach.html?j_class=ch">策划类</a><em></em><a href="seach.html?j_class=js">技术类</a><em></em><a href="seach.html?j_class=sc">市场类</a><em></em><a href="seach.html?j_class=yw">运维类</a><em></em><a href="seach.html?j_class=kf">客服类</a>
 					</div>
                 </div>
                 <!---职位分类 end-->
@@ -144,22 +147,22 @@
                 <img src="img/index/hot_job.png">
                 <ul class="joblist_ul">
                 	<li class="joblist_li">
-                    	<a href=""><span class="job_data">05/20</span><span class="job_name">SEO专员</span></a>
+                    	<a  href="job_article/job_article_seo.html" ><span class="job_data">05/20</span><span class="job_name">SEO专员</span></a>
                     </li>
                     <li class="joblist_li">
-                    	<a href=""><span class="job_data">05/20</span><span class="job_name">PHP工程师</span></a>
+                    	<a  href="job_article/job_article_php.html"><span class="job_data">05/20</span><span class="job_name">PHP工程师</span></a>
                     </li>
                     <li class="joblist_li">
-                    	<a href=""><span class="job_data">05/20</span><span class="job_name">渗透测试工程师</span></a>
+                    	<a  href="job_article/job_article_hack.html"><span class="job_data">05/20</span><span class="job_name">渗透测试工程师</span></a>
                     </li>
                     <li class="joblist_li">
-                    	<a href=""><span class="job_data">05/20</span><span class="job_name">WEB工程师</span></a>
+                    	<a  href="job_article/job_article_webui.html"><span class="job_data">05/20</span><span class="job_name">WEB工程师</span></a>
                     </li>
                     <li class="joblist_li">
-                    	<a href=""><span class="job_data">05/20</span><span class="job_name">竞价专员</span></a>
+                    	<a  href="job_article/job_article_jinjia.html"><span class="job_data">05/20</span><span class="job_name">竞价专员</span></a>
                     </li>
                     <li class="joblist_li">
-                    	<a href=""><span class="job_data">05/20</span><span class="job_name">UI设计师</span></a>
+                    	<a  href="job_article/job_article_ui.html"><span class="job_data">05/20</span><span class="job_name">UI设计师</span></a>
                     </li>
                 </ul>
             </div>
@@ -231,8 +234,16 @@ $(".moni_select .show_select").toggle(function(){
 	$(".moni_select .select_ul").stop().hide(0);
 });
 $(".select_ul .select_option").click(function(){
+	$(".show_select").attr("data-jobname",$(this).attr('data-jobname'));
 	$(".show_select").html($(this).html()+"<em>▼</em>");
 	$(".moni_select .show_select").click();
+});
+
+
+$(".job_sch_btn").click(function(){
+	var job_class=$(".show_select").attr("data-jobname");
+	var job_name=$(".job_sch_intext").val();
+	window.open("seach.html?j_class="+job_class+"&j_name="+job_name);
 });
 
 
