@@ -211,10 +211,8 @@ function showJob(obj,seach_name){
 				var hotjob_name=$(this).children("a").children(".joblist_name").html();
 				if(hotjob_name.toLowerCase().indexOf(seach_name.toLowerCase())!=-1){
 					$(this).css("display","block");
-					console.log("true");
 				}else{
 					$(this).css("display","none");
-					console.log(seach_name);
 				}
 				console.log(hotjob_name+"___"+seach_name);
 			});
