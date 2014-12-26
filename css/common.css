@@ -44,6 +44,13 @@ html { overflow-y: scroll;}
 /*	footer完 公共	*/
 
 
+/*公共模块*/
+.page_text{font-size: 14px;line-height: 30px;padding: 10px 0px;display: inline-block;}
+.page_img_title{text-align: center;font-size: 15px;line-height: 25px;}
+.page_img_tit{line-height: 30px;font-size: 18px;}
+.page_text a{width: 310px;float: left;text-align: center;display: inline-block;color:#000;}
+.page_img_title h2{line-height: 40px;}
+
 /*主页*/
 .page_index  .content .banner{width:100%;overflow: hidden;;}
 .page_index .index_ico{background:url(../img/index/index_ico.png) no-repeat;}
@@ -159,10 +166,8 @@ html { overflow-y: scroll;}
 .page_recruit .content .right_page{padding:95px 65px;text-align: left;}
 .page_recruit .content .page_title{font-size:28px;font-weight: bold;border-bottom: 1px dashed rgba(0, 0, 0, 1);padding-bottom: 25px;}
 .page_recruit .content .page_title em{width: 6px;height: 20px;background: #F00;display: inline-block;margin-right: 10px;vertical-align: middle;}
-.page_recruit .content .page_text{margin-top: 50px;}
 .page_recruit .content .page_text p{height: 50px;line-height: 50px;font-size: 16px;}
 /*公司简介列表*/
-.page_recruit .content .page_know  .page_text{line-height:30px;}
 
 
 
